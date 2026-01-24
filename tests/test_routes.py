@@ -151,10 +151,10 @@ class TestAccountService(TestCase):
         response = self.client.get(f"{BASE_URL}/{account.id}", content_type="application/json")
         created_acc = response.get_json()
         created_acc["name"] = "Kyle"
-        
+
         response = self.client.put(
             f"{BASE_URL}/{account.id}",
-            json=created_acc, 
+            json=created_acc,
         )
 
         data = response.get_json()
