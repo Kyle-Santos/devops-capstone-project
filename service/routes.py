@@ -69,7 +69,6 @@ def list_accounts():
     This endpoint will list all Accounts
     """
     app.logger.info("Request to list all Accounts")
-    check_content_type("application/json")
 
     accounts = Account.all()
     list_of_accounts = [account.serialize() for account in accounts]
@@ -90,7 +89,6 @@ def read_account(id):
     This endpoint will read an Account based on the id sent
     """
     app.logger.info("Request to read an Account")
-    check_content_type("application/json")
 
     account = Account.find(id)
     if not account:
